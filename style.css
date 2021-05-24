@@ -1,0 +1,12 @@
+body {
+    margin: 20px;
+    font-family: 'Pattaya', sans-serif;
+}
+
+.todoItemek:not(:first-child) {
+    margin-top: 10px;
+}
+
+.osszesites {
+    margin: 15px 5px;
+}
