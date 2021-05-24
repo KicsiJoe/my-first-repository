@@ -50,7 +50,7 @@ export const szamolasok = () => {
         becsekkolt = 0;
     inputok.forEach((item, index) => {
         todos[index].isCompleted = item.checked;
-        if (item.checked ? becsekkolt++ : ""); 
+        if (item.checked ? becsekkolt++ : 0); 
         szamolasok();
         });
     }
