@@ -1,0 +1,35 @@
+<html>
+    <header>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Pattaya&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js" type="module"></script>
+    </header>
+    <body>
+        <h1>Todo lista</h1>
+        <div id="felsorolas">
+           
+        </div>
+        <div class="input_mezok">
+            <input class="inp" id="szoveg_bevitel" type="text"> 
+            <input class="inp" type="number" min="1" max="5" id="ertek_bevitel">
+            <input type="button" id="save_btn" class="gombok" value="Save">
+        </div>
+        <div class="osszesites">
+            <span id="szoveg"><strong class="betuzes">Completed:</strong></span>
+            <span id="ertek"></span>
+
+            <div class="rendezes">
+                <strong>Rendezés: </strong>
+                <input type="button" class="gombok" id="novekvo_btn" value="Növekvő"><input type="button" class="gombok" id="csokkeno_btn" value="Csökkenő">
+            </div>
+            <div class="legnehezebb">
+                <strong>Legnehezebb elem: </strong>
+                <span id="legnehezebb_elem">Mosni 2</span>
+            </div>
+
+
+        </div>
+    </body>
+    
+</html>

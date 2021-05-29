@@ -1,0 +1,57 @@
+body {
+    margin: 20px;
+    font-family: 'Pattaya', sans-serif;
+}
+
+.todoItemek:not(:first-child) {
+    margin-top: 10px;
+}
+
+.osszesites {
+    margin: 0px 5px;
+}
+
+.deleteX {
+    width: 20px;
+    background-color: red;
+    text-align: center;
+    padding: 2px 10px;
+    margin-left: 5px;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+
+}
+#ertek {
+    margin-left: 5px;
+}
+.input_mezok {
+    margin: 15 0 5 0;
+}
+.inp {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    height: 25px;
+    outline: none;
+}
+#ertek_bevitel {
+    width: 40px;  
+}
+
+.gombok {
+    height: 20px;
+    background-color: grey;
+    border-radius: 5px;
+    outline: none;
+    padding: auto;
+    margin-left: 10px;
+    color: white;
+    border: none;
+    text-decoration: none;
+}
+
+.rendezes {
+    margin: 10 0;
+}
