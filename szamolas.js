@@ -1,61 +1,129 @@
-import { szazalekSzamitas } from "./szazalek.js"
+import { szazalekSzamitas } from "./szazalek.js";
 
 let becsekkolt = 0;
 
 const todo1 = {
-    todo: "Kitakaritani",
-    isCompleted: false
-}
+  todo: "Kitakaritani",
+  isCompleted: false,
+  nehezseg: 5,  
+};
 const todo2 = {
-    todo: "Mosni",
-    isCompleted: false
-}
+  todo: "Mosni",
+  isCompleted: false,
+  nehezseg: 2, 
+};
 const todo3 = {
-    todo: "Bevásárolni",
-    isCompleted: false
-}
+  todo: "Bevásárolni",
+  isCompleted: false,
+  nehezseg: 3, 
+};
 const todo4 = {
-    todo: "Főzni",
-    isCompleted: false
-}
+  todo: "Főzni",
+  isCompleted: false,
+  nehezseg: 2,  
+};
 
-const todos = [
-    todo1,
-    todo2,
-    todo3,
-    todo4
-]
+const todos = [todo1, todo2, todo3, todo4];
 
-const chekedSzoveg = 'style="text-decoration: line-through ;"'
-
+const chekedSzoveg = 'style="text-decoration: line-through ;"';
 
 export const szamolasok = () => {
+
+  const todoBeilleszt = document.querySelector("#felsorolas");
+  todoBeilleszt.innerHTML = "";
+  todos.forEach((todo) => {
+    let sorSzam = todos.indexOf(todo) + 1;
+    todoBeilleszt.innerHTML =
+      todoBeilleszt.innerHTML +
+      `<div class="todoItemek">
+    <input type="checkbox" ${todo.isCompleted ? "checked" : ""}> 
+    <span class="sorszam" ${
+      todo.isCompleted ? chekedSzoveg : 'style="color: red ;"'
+    }>${sorSzam}.${todo.todo} - ${todo.nehezseg}</span> <span class="deleteX">X</span>
+    </div>`;
+  });
+  // Innen jon a visszairas a konyvtarba
+  let deleteGombok = document.querySelectorAll(".deleteX");
+
+  deleteGombok.forEach((del, index) => del.addEventListener("click", () => {  
+    // console.log(index);
+    todos.splice(index,1);
+    // console.log(todos);
     
-    const todoBeilleszt = document.querySelector("#felsorolas"); 
-    todoBeilleszt.innerHTML = "";
-    todos.forEach(todo => {
-        todoBeilleszt.innerHTML = todoBeilleszt.innerHTML +  `<div class="todoItemek">
-    <input type="checkbox" ${todo.isCompleted ? "checked" : "" }> <span ${todo.isCompleted ? chekedSzoveg : 'style="color: red ;"' }>${todo.todo}</span>  
-    </div>`
+    return szamolasok()
+    
+    } ));
+  let checkboxok = document.querySelectorAll("input[type='checkbox']");
+
+  checkboxok.forEach((item) => item.addEventListener("click", () => csekk()));
+
+  const csekk = () => {
+    becsekkolt = 0;
+    checkboxok.forEach((item, index) => {
+      todos[index].isCompleted = item.checked;
+      if (item.checked ? becsekkolt++ : 0);
+      szamolasok();
     });
-    // Innen jon a visszairas a konyvtarba
-    
-    const inputok = document.querySelectorAll("input");
+  };
 
-    const checkboxok = document.querySelectorAll("input[type='checkbox']")
+  const ertekId = document.getElementById("ertek");
+  let osszDb = checkboxok.length;
+  ertekId.innerText = szazalekSzamitas(osszDb, becsekkolt) + " %";
+  
+  let legnehezebb = document.getElementById("legnehezebb_elem");
 
-    checkboxok.forEach((item) => item.addEventListener("click", () => csekk()))
-    
-    const csekk = () => {
-        becsekkolt = 0;
-    inputok.forEach((item, index) => {
-        todos[index].isCompleted = item.checked;
-        if (item.checked ? becsekkolt++ : 0); 
-        szamolasok();
-        });
-    }
-
-    const ertekId = document.getElementById("ertek");
-    let osszDb = checkboxok.length;
-    ertekId.innerText = szazalekSzamitas(osszDb, becsekkolt) + " %"; 
+  let legnagyobb = () => {
+    let innen = todos;
+    innen.sort((a, b) => b.nehezseg - a.nehezseg)
+    return innen[0].todo + " " + innen[0].nehezseg;
+  }
+  legnehezebb.innerText = legnagyobb()
 };
+
+let save = document.getElementById("save_btn");
+
+save.addEventListener('click', () => {
+  let szoveg_val = document.getElementById("szoveg_bevitel").value;
+  let szoveg = document.getElementById("szoveg_bevitel");
+  let szam_val = document.getElementById("ertek_bevitel").value;
+  let szam = document.getElementById("ertek_bevitel");
+  if (szoveg_val != "") {
+    let az = ("todo"+ (todos.length + 1));
+    az = {};
+    az.todo = szoveg_val; 
+    az.isCompleted = false;
+    if (szam_val == "" || Number(szam_val) >5 || Number(szam_val) < 1 || szam_val == String ){
+      alert("Rossz számbevitel miatt az érték: 1")
+      az.nehezseg = 1;
+    } else {
+      az.nehezseg = parseInt(szam_val);
+    }
+    todos.push(az)
+
+  }
+  
+  // console.log(todos);
+  szoveg.value = "";
+  szam.value = "";
+  
+  szamolasok();
+  
+})
+
+let novekvo = document.getElementById("novekvo_btn")
+novekvo.addEventListener("click", () => {
+
+  todos.sort((a, b) => a.nehezseg - b.nehezseg)
+  szamolasok();
+
+}) 
+
+let csokkeno = document.getElementById("csokkeno_btn")
+csokkeno.addEventListener("click", () => {
+
+  todos.sort((a, b) => b.nehezseg - a.nehezseg)
+  szamolasok();
+  
+
+})
+

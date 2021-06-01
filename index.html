@@ -10,9 +10,25 @@
         <div id="felsorolas">
            
         </div>
+        <div class="input_mezok">
+            <input class="inp" id="szoveg_bevitel" type="text"> 
+            <input class="inp" type="number" min="1" max="5" id="ertek_bevitel">
+            <input type="button" id="save_btn" class="gombok" value="Save">
+        </div>
         <div class="osszesites">
-            <span id="szoveg"><strong>Completed: </strong></span>
+            <span id="szoveg"><strong class="betuzes">Completed:</strong></span>
             <span id="ertek"></span>
+
+            <div class="rendezes">
+                <strong>Rendezés: </strong>
+                <input type="button" class="gombok" id="novekvo_btn" value="Növekvő"><input type="button" class="gombok" id="csokkeno_btn" value="Csökkenő">
+            </div>
+            <div class="legnehezebb">
+                <strong>Legnehezebb elem: </strong>
+                <span id="legnehezebb_elem">Mosni 2</span>
+            </div>
+
+
         </div>
     </body>
     
