@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script src="bundle.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <h2>Javascript Meteorológus</h2>
+        </div>
+        <div class="search-bar">
+                <div class="form-container">
+                    <form action="" id="form">
+                        <!-- Varos input -->
+                        <div id="city" class="form-item">
+                            <input type="text" id="city-input" required placeholder="Város">
+                        </div>
+                        <!-- Datum input -->
+                        <div id="date" class="form-item">
+                            <input id="date-input" type="date" required>
+                        </div>
+
+                        <div class="horizontal-spacer">
+                        <!-- Keresés gomb -->
+                        </div>
+                        <div id="search" class="form-item">
+                            <button type="reset" >X</button>
+                            <button type="submit" id="submit">Keresés</button>
+                            
+                        </div>
+                    </form>
+                </div>
+        </div>
+        
+        <div id="error-message" class="error-message" style="display: none; ">
+            Hiba történt az adatbetöltésnél!
+        </div>
+        <div class="content">
+            <div class="weather-container" id="cards-container">
+                
+            </div>
+        </div>
+    </body>
+</html>
