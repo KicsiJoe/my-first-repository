@@ -1,0 +1,70 @@
+
+
+section {
+    width: 100vw;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#ora {
+    font-size: 40px;
+    border: solid;
+    width: 200px;
+    text-align: center;
+}
+.lift div{
+    height: 50px;
+    width: 50px;
+    border: solid; 
+}
+
+.emelet {
+    position: relative;
+    
+}
+.lift div:not(:last-child) {
+    border-bottom: 0px;
+}
+
+.liftEz {
+    background-color: aqua;
+}
+.zold {
+    background-color: lightgreen;
+}
+
+.folyoso {
+    position: absolute;
+    bottom: -3px;
+    left: 50px;
+    height: 30px;
+    width: 150px;
+    border: solid;
+    background-color: rgb(204, 204, 228);
+}
+.fa-male {
+    font-size: 25px;
+    margin: 2px;
+}
+
+.fa-female {
+    font-size: 22px;
+    margin-top: 3px;
+}
+.piros {
+    color: rgb(203, 18, 18);
+}
+
+.sarga {
+    color: rgb(216, 155, 22);
+}
+.green {
+    color: green;
+}
+
+.lift div:not(:last-child) {
+    border-bottom: 0px;
+}
