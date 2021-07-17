@@ -1,0 +1,317 @@
+$shadow: 8px 7px 10px 3px rgba(0,0,0,0.89);
+
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #E8E8DB;
+  header  {
+    display: flex;
+    justify-content: space-between;
+      box-shadow: $shadow;
+      border-radius: 20px;
+       margin: 10px;
+       background-color: #FFDF65;
+       h1 {
+           margin: 0;
+           padding: 30px;
+       }
+       .gomb {
+        
+        /* display: none; */
+        align-self: center;
+        margin-right: 20px;
+    }
+    .chart {
+        box-sizing: border-box;
+        padding: 10px 10px;
+        margin: 5px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+            
+            outline: none;
+            background-color: #EBB92B;
+           /*  border: 1px solid white; */
+        }
+        &:active {
+            transform: scale(0.94);
+        } 
+    }
+  }
+    .sections{
+        
+        display: flex;
+        justify-content: space-between;
+
+        margin: 0;
+        width: 100%;
+        
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom:  5px;
+        }
+
+        #error-message{
+            font-size: 20px;
+            font-weight: 900;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            padding: 15px;
+            border-radius: 10px;
+            height: 40px;
+            background-color: rgb(230, 104, 104);
+            box-shadow: $shadow;
+        }
+
+        .form-item {
+            height: 30px;
+            padding: 0 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+
+            &:focus {
+                border: 1px solid #69B3F0;
+            }
+        }
+       
+        #kereso {
+            
+            margin-top: 20px;
+            display: flex;
+            padding: 5px;
+            align-items: center;
+            width: 90%;
+            justify-content: space-around;
+
+            button {
+                display: block;
+                margin: 5px;
+                transition: transform .2s;
+                outline: none;
+                border: none;
+                border-radius: 5px;
+                box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
+                padding: 10px 10px;
+                font-size: 16px;
+                cursor: pointer;
+
+             /*    &:focus {
+                    border: 1px solid #69B3F0;
+                } */
+                &:hover {
+                    
+                    outline: none;
+                    background-color: #EBB92B;
+                   /*  border: 1px solid white; */
+                }
+                &:active {
+                    transform: scale(0.94);
+                }   
+            }
+        }
+
+
+  
+        .sectionStyle{
+            border-radius: 20px;
+            margin: 10px;
+            padding: 14px;
+           
+        }
+        .left {
+            box-shadow: $shadow;
+            background-color: #FFDF65;
+            min-width: max-content;
+            max-height: max-content;
+            align-self: flex-start;
+        }
+        .right{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-around; 
+            margin: 10px;
+            
+           
+            
+  /*           .cards {
+                background-color: beige;
+                box-shadow: $shadow;
+                border-radius: 20px;
+                margin: 10px;
+                padding: 14px;
+                width: 25%;
+                height: 150px;
+            } */
+        }
+    }
+
+
+
+degulion-card {
+    background-color: beige;
+    box-shadow: $shadow;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 14px;
+    /* min-width: 150px; */
+    min-width: 25%;
+    height: max-content;
+    animation: fadeIn 3s;
+}
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-size: 18px;
+    
+}
+.torles {
+    background: none;
+    background-color:#004545;
+    color: #ffffff;
+    border-radius: 8px;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.35);
+    margin-top: 15px;
+    margin-right:0;
+    margin-left: auto;
+   &:hover {
+    outline: none;
+    background-color: #EBB92B;
+}
+    &:focus {
+    outline: none;
+    background-color: #00c4c4;
+    color: var(--font-color);
+}
+}
+    
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+
+}
+
+span.ter_1 {
+    /* margin-bottom: 0; */
+    margin-bottom: 10px;
+}
+
+.loader {
+    color: #FFDF65;
+    font-size: 20px;
+    margin: 100px auto;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    text-indent: -9999em;
+    -webkit-animation: load4 1.3s infinite linear;
+    animation: load4 1.3s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  @-webkit-keyframes load4 {
+    0%,
+    100% {
+      box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+      box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+  }
+  @keyframes load4 {
+    0%,
+    100% {
+      box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+      box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+  }
+}
+
+#chartContainer {
+  /* flex-shrink:0; */
+  display: flex;
+  flex-direction: column;
+ 
+  width: 90%;
+  
+  height: 800px;
+  border: 3px solid black;
+}
+
+.chartBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  
+}
+
+canvas {
+  box-sizing: border-box !important;
+  height: 400px !important;
+  /* height: 100% !important;  */
+  
+}

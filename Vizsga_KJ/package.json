@@ -1,0 +1,27 @@
+{
+  "name": "vizsga",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Degulion",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^5.2.7",
+    "degulion-card": "^1.0.0",
+    "loader": "^2.1.1",
+    "sass": "^1.35.2",
+    "sass-loader": "^12.1.0",
+    "style": "0.0.3",
+    "style-loader": "^3.1.0",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {},
+  "description": ""
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script type="module" src="bundle.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Covid-Data-Finder</h1>
+        <div class="gomb" style="display: none;" ><button id="chart" class="chart" type="button"> CHART</button></div>
+        
+    </header>
+
+<div class="sections">
+
+    <section class="left sectionStyle">
+
+       <div class="ez">
+            <div class="form-container">
+            <form id="form" action="">
+                <label class="labels" for="">Kiválasztott ország:</label>
+                <div >
+                    <input id="country" required class="form-item" style="font-weight: bold;"  type="text">
+                </div>
+
+                <label>Keresett terület I.:</label>
+
+                <select id="terulet_1" class="form-item" required>
+                    <option value="">Choose a case</option>
+                    <option value="confirmed">confirmed</option>
+                    <option value="deaths">deaths</option>
+                    <option value="population">population</option>
+                    <option value="sq_km_area">sq_km_area</option>
+                  
+                </select>
+
+                <label for="#terulet_2">Keresett terület II.:</label>
+                <select id="terulet_2" required class="form-item">
+                    <option value="">Choose a vaccines data</option>
+                    <option value="administered">administered</option>
+                    <option value="people_vaccinated">people_vaccinated</option>
+                    <option value="people_partially_vaccinated"></option>people_partially_vaccinated</option>
+                            
+                </select>
+  
+                <div id="kereso">
+                    <button id="submit" type="submit">Search..</button>
+                    <button id="reset" type="reset" >X</button>
+                </div>
+            </form>
+            </div>
+        </div>
+       
+    </section>
+ 
+    <section class="right  cardHolder" id="container" >
+     
+        <section class="chartHolder" id="chartContainer" style="display: none;"> 
+           
+
+            <div class="chartBox" id="chartBox">
+
+                <canvas id="chartId_1"  >
+
+                </canvas>
+
+                <div class="chartBox"> 
+                     
+                    <canvas id="chartId_2"  >
+
+                    </canvas> 
+                </div>  
+            </div> 
+                
+           
+    
+        </section>
+
+    </section>
+
+ 
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
